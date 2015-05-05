@@ -1,51 +1,51 @@
 [
     {
-        "remote": "cm",
-        "repository": "android_kernel_samsung_lt03wifi",
+        "remote": "gh",
+        "repository": "RaymanFX/kernel_samsung_lt03wifi",
         "target_path": "kernel/samsung/lt03wifi",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
         "remote": "cm",
         "repository": "android_hardware_samsung",
         "target_path": "hardware/samsung",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
         "remote": "cm",
         "repository": "android_hardware_samsung_slsi_exynos",
         "target_path": "hardware/samsung_slsi/exynos",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
-        "remote": "cm",    
+        "remote": "cm",
         "repository": "android_hardware_samsung_slsi_exynos5-insignal",
         "target_path": "hardware/samsung_slsi/exynos5-insignal",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
-        "remote": "cm",    
+        "remote": "cm",
         "repository": "android_hardware_samsung_slsi_exynos5420",
         "target_path": "hardware/samsung_slsi/exynos5420",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
-        "remote": "cm",    
+        "remote": "cm",
         "repository": "android_hardware_samsung_slsi_openmax",
         "target_path": "hardware/samsung_slsi/openmax",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
-        "remote": "gh",    
+        "remote": "gh",
         "repository": "RaymanFX/vendor_samsung_lt03wifi",
         "target_path": "vendor/samsung",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
         "remote": "tm",
         "repository": "proprietary_vendor_samsung",
         "target_path": "vendor/samsung",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     }
 ]
 

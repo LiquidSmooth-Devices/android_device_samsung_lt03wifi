@@ -1,14 +1,8 @@
 [
     {
         "remote": "gh",
-        "repository": "RaymanFX/kernel_samsung_lt03wifi",
+        "repository": "raymanfx/kernel_samsung_lt03wifi",
         "target_path": "kernel/samsung/lt03wifi",
-        "revision": "cm-12.1"
-    },
-    {
-        "remote": "cm",
-        "repository": "android_hardware_samsung",
-        "target_path": "hardware/samsung",
         "revision": "cm-12.1"
     },
     {
@@ -36,8 +30,14 @@
         "revision": "cm-12.1"
     },
     {
+        "remote": "cm",
+        "repository": "android_hardware_samsung",
+        "target_path": "hardware/samsung",
+        "revision": "cm-12.1"
+    },
+    {
         "remote": "gh",
-        "repository": "RaymanFX/vendor_samsung_lt03wifi",
+        "repository": "raymanfx/vendor_samsung_lt03wifi",
         "target_path": "vendor/samsung/lt03wifi",
         "revision": "cm-12.1"
     },

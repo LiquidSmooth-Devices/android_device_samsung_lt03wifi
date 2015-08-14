@@ -22,7 +22,7 @@ PRODUCT_CHARACTERISTICS := tablet
 DEVICE_PACKAGE_OVERLAYS += device/samsung/lt03wifi/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
@@ -31,12 +31,14 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    mixer_paths.xml \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    af.fast_track_multiplier=1
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -64,7 +66,7 @@ PRODUCT_PACKAGES += \
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
-    hwcomposer.exynos5 \
+    libcec \
     gralloc.exynos5
 
 # IR
@@ -75,17 +77,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
 
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.exynos5
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.universal5420
 
 # Media profile
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml  \
@@ -100,7 +97,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libMcClient \
     libMcRegistry \
-    libPaApi \
     libgdmcprov \
     mcDriverDaemon
 
@@ -109,13 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libpcap \
     tcpdump
-
-# OMX
-PRODUCT_PACKAGES += \
-    libcsc \
-    libExynosOMX_Core \
-    libOMX.Exynos.MP3.Decoder \
-    libstagefrighthw \
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -191,8 +180,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# CPU producer to CPU consumer not supported
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bq.gpu_to_cpu_unsupported=1
+
 # call dalvik heap config
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/samsung/lt03wifi/lt03wifi-vendor.mk)
+
+# call Samsung LSI board support package
+$(call inherit-product, hardware/samsung_slsi/exynos5-insignal/exynos5.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos5420/exynos5420.mk)

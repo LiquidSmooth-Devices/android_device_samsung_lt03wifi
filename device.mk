@@ -192,4 +192,4 @@ $(call inherit-product-if-exists, vendor/samsung/lt03wifi/lt03wifi-vendor.mk)
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5-insignal/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos5420/exynos5420.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos5420/Android.mk)

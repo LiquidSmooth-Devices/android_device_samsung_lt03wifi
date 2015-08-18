@@ -53,7 +53,7 @@ COMMON_GLOBAL_CFLAGS += -DSAMSUNG_DVFS
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_CONFIG := BrokenNote_lt03wifi_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_lt03wifi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/lt03wifi
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
